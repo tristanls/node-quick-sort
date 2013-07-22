@@ -78,19 +78,19 @@ test['sorting [1] ascending should result in [1]'] = function (test) {
     test.done();
 };
 
-// test['sorted ascending result should find only greater or equal values while ascending'] = function (test) {
-//     var n = 10000;
-//     test.expect(n - 1);
-//     var array = [];
-//     for (var i = 0; i < n; i++) {
-//         array.push(Math.floor(Math.random() * n));
-//     }
-//     array = quickSort(array);
-//     for (i = 0; i < array.length - 1; i++) {
-//         test.ok(array[i] <= array[i + 1]);
-//     }
-//     test.done();
-// }
+test['sorted ascending result should find only greater or equal values while ascending'] = function (test) {
+    var n = 10000;
+    test.expect(n - 1);
+    var array = [];
+    for (var i = 0; i < n; i++) {
+        array.push(Math.floor(Math.random() * n));
+    }
+    array = quickSort(array);
+    for (i = 0; i < array.length - 1; i++) {
+        test.ok(array[i] <= array[i + 1]);
+    }
+    test.done();
+}
 
 test['sorting [5,2,4,6,1,3] descending should result in [6,5,4,3,2,1]'] = function (test) {
     test.expect(1);
@@ -136,16 +136,16 @@ test['sorting [1] descending should result in [1]'] = function (test) {
     test.done();
 };
 
-// test['sorted descending result should find only lesser or equal values while descending'] = function (test) {
-//     var n = 10000;
-//     test.expect(n - 1);
-//     var array = [];
-//     for (var i = 0; i < n; i++) {
-//         array.push(Math.floor(Math.random() * n));
-//     }
-//     array = quickSort(array, undefined, undefined, false);
-//     for (i = 0; i < array.length - 1; i++) {
-//         test.ok(array[i] >= array[i + 1]);
-//     }
-//     test.done();
-// }
+test['sorted descending result should find only lesser or equal values while descending'] = function (test) {
+    var n = 10000;
+    test.expect(n - 1);
+    var array = [];
+    for (var i = 0; i < n; i++) {
+        array.push(Math.floor(Math.random() * n));
+    }
+    array = quickSort(array, undefined, undefined, false);
+    for (i = 0; i < array.length - 1; i++) {
+        test.ok(array[i] >= array[i + 1]);
+    }
+    test.done();
+}
