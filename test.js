@@ -150,50 +150,50 @@ test['sorted descending result should find only lesser or equal values while des
     test.done();
 };
 
-test['random sorting [5,2,4,6,1,3] ascending should result in [1,2,3,4,5,6]'] = function (test) {
+test['random partitioning sorting [5,2,4,6,1,3] ascending should result in [1,2,3,4,5,6]'] = function (test) {
     test.expect(1);
     test.deepEqual(quickSort([5,2,4,6,1,3], undefined, undefined, true, true), [1,2,3,4,5,6]);
     test.done();
 };
 
-test['random sorting [5,2,2,6,1,3] ascending should result in [1,2,2,3,5,6]'] = function (test) {
+test['random partitioning sorting [5,2,2,6,1,3] ascending should result in [1,2,2,3,5,6]'] = function (test) {
     test.expect(1);
     test.deepEqual(quickSort([5,2,2,6,1,3], undefined, undefined, true, true), [1,2,2,3,5,6]);
     test.done();
 };
 
-test['random sorting [0,0,0,0,0,1] ascending should result in [0,0,0,0,0,1]'] = function (test) {
+test['random partitioning sorting [0,0,0,0,0,1] ascending should result in [0,0,0,0,0,1]'] = function (test) {
     test.expect(1);
     test.deepEqual(quickSort([0,0,0,0,0,1], undefined, undefined, true, true), [0,0,0,0,0,1]);
     test.done();
 };
 
-test['random sorting [0,0,0,0,0,-1] ascending should result in [-1,0,0,0,0,0]'] = function (test) {
+test['random partitioning sorting [0,0,0,0,0,-1] ascending should result in [-1,0,0,0,0,0]'] = function (test) {
     test.expect(1);
     test.deepEqual(quickSort([0,0,0,0,0,-1], undefined, undefined, true, true), [-1,0,0,0,0,0]);
     test.done();
 };
 
-test['random sorting [f,e,d,a,c,b] ascending should result in [a,b,c,d,e,f]'] = function (test) {
+test['random partitioning sorting [f,e,d,a,c,b] ascending should result in [a,b,c,d,e,f]'] = function (test) {
     test.expect(1);
     test.deepEqual(quickSort(['f','e','d','a','c','b'], undefined, undefined, true, true), ['a','b','c','d','e','f']);
     test.done();
 };
 
-test['random sorting [] ascending should result in []'] = function (test) {
+test['random partitioning sorting [] ascending should result in []'] = function (test) {
     test.expect(1);
     test.deepEqual(quickSort([], undefined, undefined, true, true), []);
     test.done();
 };
 
 
-test['random sorting [1] ascending should result in [1]'] = function (test) {
+test['random partitioning sorting [1] ascending should result in [1]'] = function (test) {
     test.expect(1);
     test.deepEqual(quickSort([1], undefined, undefined, true, true), [1]);
     test.done();
 };
 
-test['random sorted ascending result should find only greater or equal values while ascending'] = function (test) {
+test['random partitioning sorted ascending result should find only greater or equal values while ascending'] = function (test) {
     var n = 10000;
     test.expect(n - 1);
     var array = [];
@@ -207,51 +207,51 @@ test['random sorted ascending result should find only greater or equal values wh
     test.done();
 }
 
-test['random sorting [5,2,4,6,1,3] descending should result in [6,5,4,3,2,1]'] = function (test) {
+test['random partitioning sorting [5,2,4,6,1,3] descending should result in [6,5,4,3,2,1]'] = function (test) {
     test.expect(1);
     test.deepEqual(quickSort([5,2,4,6,1,3], undefined, undefined, false, true), [6,5,4,3,2,1]);
     test.done();
 };
 
-test['random sorting [5,2,2,6,1,3] descending should result in [6,5,4,2,2,1]'] = function (test) {
+test['random partitioning sorting [5,2,2,6,1,3] descending should result in [6,5,4,2,2,1]'] = function (test) {
     test.expect(1);
     test.deepEqual(quickSort([5,2,2,6,1,3], undefined, undefined, false, true), [6,5,3,2,2,1]);
     test.done();
 };
 
-test['random sorting [0,0,0,0,0,1] descending should result in [1,0,0,0,0,0]'] = function (test) {
+test['random partitioning sorting [0,0,0,0,0,1] descending should result in [1,0,0,0,0,0]'] = function (test) {
     test.expect(1);
     test.deepEqual(quickSort([0,0,0,0,0,1], undefined, undefined, false, true), [1,0,0,0,0,0]);
     test.done();
 };
 
-test['random sorting [0,0,0,0,0,-1] descending should result in [0,0,0,0,0,-1]'] = function (test) {
+test['random partitioning sorting [0,0,0,0,0,-1] descending should result in [0,0,0,0,0,-1]'] = function (test) {
     test.expect(1);
     test.deepEqual(quickSort([0,0,0,0,0,-1], undefined, undefined, false, true), [0,0,0,0,0,-1]);
     test.done();
 };
 
-test['random sorting [f,e,d,a,c,b] descending should result in [f,e,d,c,b,a]'] = function (test) {
+test['random partitioning sorting [f,e,d,a,c,b] descending should result in [f,e,d,c,b,a]'] = function (test) {
     test.expect(1);
     test.deepEqual(quickSort(['f','e','d','a','c','b'], undefined, undefined, false, true), 
                    ['f','e','d','c','b','a']);
     test.done();
 };
 
-test['random sorting [] descending should result in []'] = function (test) {
+test['random partitioning sorting [] descending should result in []'] = function (test) {
     test.expect(1);
     test.deepEqual(quickSort([], undefined, undefined, false, true), []);
     test.done();
 };
 
 
-test['random sorting [1] descending should result in [1]'] = function (test) {
+test['random partitioning sorting [1] descending should result in [1]'] = function (test) {
     test.expect(1);
     test.deepEqual(quickSort([1], undefined, undefined, false, true), [1]);
     test.done();
 };
 
-test['random sorted descending result should find only lesser or equal values while descending'] = function (test) {
+test['random partitioning sorted descending result should find only lesser or equal values while descending'] = function (test) {
     var n = 10000;
     test.expect(n - 1);
     var array = [];
