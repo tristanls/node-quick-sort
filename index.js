@@ -31,14 +31,20 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 "use strict";
 
-var quickSort = module.exports = function quickSort (array, p, r, ascending) {
+var quickSort = module.exports = function quickSort (array, p, r, ascending, randomized) {
     ascending = (typeof ascending === "undefined") ? true : ascending;
+    randomized = (typeof randomized === "undefined") ? false : randomized;
     p = (typeof p === "undefined") ? 0 : p;
     r = (typeof r === "undefined") ? array.length - 1 : r;
+    var q;
     if (p < r) {
-        var q = partition(array, p, r, ascending);
-        quickSort(array, p, q - 1, ascending);
-        quickSort(array, q + 1, r, ascending);
+        if (randomized) {
+            q = randomizedPartition(array, p, r, ascending);            
+        } else {
+            q = partition(array, p, r, ascending);
+        }
+        quickSort(array, p, q - 1, ascending, randomized);
+        quickSort(array, q + 1, r, ascending, randomized);
     }
     return array;
 };
@@ -59,4 +65,12 @@ var partition = function partition (array, p, r, ascending) {
     array[i + 1] = array[r];
     array[r] = temp;
     return i + 1;
+};
+
+var randomizedPartition = function randomizedPartition (array, p, r, ascending) {
+    var i = Math.floor((Math.random() * (r - p)) + 1) + p;
+    var temp = array[r];
+    array[r] = array[i];
+    array[i] = temp;
+    return partition(array, p, r, ascending);
 };
